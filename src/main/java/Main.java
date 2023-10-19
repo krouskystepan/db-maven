@@ -8,7 +8,12 @@ public class Main {
 
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/zoo", "root", "");
-            PreparedStatement statement = con.prepareStatement("INSERT INTO aminals VALUES (NULL,?,?)");
+            PreparedStatement statement = con.prepareStatement("INSERT INTO aminals VALUES (NULL,?,?,?)");
+            statement.setString(1, "Eliska");
+            statement.setInt(2, 1);
+            statement.setInt(3, 40);
+            statement.execute();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
