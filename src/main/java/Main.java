@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         try {
+            // xamp, vytvorit tabulku animals s id, name, age, height...
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/zoo", "root", "");
             PreparedStatement statement = con.prepareStatement("INSERT INTO aminals VALUES (NULL,?,?,?)");
             statement.setString(1, "Eliska");
